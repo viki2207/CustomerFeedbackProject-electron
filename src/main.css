@@ -2,6 +2,7 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
+    position:relative;
 }
 body{
     font-family: 'poppins',sans-serif;
@@ -13,8 +14,8 @@ body{
 }
 .container
 {
-    paddin:1rem;
-    width:30rem;
+    padding:1rem;
+    width:50rem;
     background-color:darksalmon;
     border-radius: .5rem;
     box-shadow: 0 0 2rem rgb(0,0,0,.3);
@@ -22,7 +23,7 @@ body{
     position:relative;
 }
 .wrapper{
-    margin:4rem 0;
+    margin:2rem 0;
 }
 .text
 {
@@ -52,3 +53,56 @@ body{
 {
     transform:scale(1.4)
 }
+.href_smily{
+    text-decoration: none;
+ border:none;
+
+ font-size:1.5em;
+
+ border-width: 0;
+ background-color:darksalmon;
+ cursor: pointer;
+ transition:transform .2s ease-in;
+}
+.happy{
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+}
+.reasons
+{
+    margin-bottom: .5rem;
+    font-size:1.5em;
+    color:#fdfdfd;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+}
+.checkedcontainer
+{
+    
+    margin:1em;
+    background-color:rgb(151, 196, 214);
+    border-radius:1.5em;
+    border:1em solid rgb(151, 196, 214);
+    overflow:auto;
+    float:left;
+    cursor: pointer;
+    font-size: 0.8em;
+
+}
+.btnsubmit
+{
+    cursor: pointer;
+    color:#eee;
+    background-color:rgb(151, 196, 214) ;
+    border-radius: 0.5em;
+    border:2em solid rgb(151,196,214);
+    
+    font-size: 0.8em;
+    margin-top: 6.3em;
+    margin-bottom: 0.3em;
+    bottom: 0;
+    
+}
+

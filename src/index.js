@@ -1,21 +1,9 @@
-// let worried_smily = document.getElementById("worried_smily");
-// // worried_smily.addEventListener("click", ({send()})=>{
-// // function send(params) {
-    
-// // }
-// // console.log("Hello smily") 
-// //  
-    
-// // })
-
-
-// worried_smily.addEventListener('click', () => { send() });
-
-// function send(){
-//     console.log('ping');
-//      win.setIgnoreMouseEvents(true);
-// }
-// app.on('ready', function(){
-//     mainWindow = new BrowserWindow({width:800, height:600});
-//     mainWindow.webContents.openDevTools();
-// });
+let smily = document.getElementById("Worried_Smily");
+// smily.addEventListener('click', function(e){
+//     e.preventDefault()
+//     console.log('Sample Element')
+// })
+console.log(smily);
+smily.addEventListener('click', (event)=>{
+    console.log("hia");
+})
