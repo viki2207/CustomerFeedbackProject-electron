@@ -96,13 +96,33 @@ body{
     cursor: pointer;
     color:#eee;
     background-color:rgb(151, 196, 214) ;
-    border-radius: 0.5em;
+    border-radius: 0.8em;
     border:2em solid rgb(151,196,214);
     
-    font-size: 0.8em;
-    margin-top: 6.3em;
+    /* font-size: 0.5em; */
+    /* margin-top: 9.3em; */
     margin-bottom: 0.3em;
     bottom: 0;
-    
 }
+.submit
+{
+    width:23px;
+margin-left: 21.5em;
+margin-top: 13em;
+}
+.back
+{
+    width: 60px;
+   
+    cursor: pointer;
+    background-color:rgb(151, 196, 214);
+border:1em solid rgb(151,196,214);
+text-decoration: none;
 
+}
+.href{
+
+    color:#eee;
+    text-decoration: none;
+    border: none;
+}

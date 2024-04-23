@@ -4,12 +4,16 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-"start":"electron ."
+    "start": "electron ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^29.3.0"
+  },
+  "dependencies": {
+    "mongodb": "^6.5.0",
+    "nodemon": "^3.1.0"
   }
 }
