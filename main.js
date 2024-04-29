@@ -1,4 +1,5 @@
 const{app,BrowserWindow} = require('electron');
+require("./src/database/database");
 function createWindow(){
     const win = new BrowserWindow({
         width:768,

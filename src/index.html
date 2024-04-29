@@ -15,14 +15,17 @@
     <div class="container">
         <div class="wrapper">
             <p class="text"> How Would You Rate This App? </p>
-            <div class="emoji">
-                <div><a href="feedback.html" class="href_smily">😠</a></div>
-                <div><a href="feedback.html" class="href_smily">😑</a></div>
-                 <div><a href="feedback.html" class="href_smily">🙂 </a></div>
-                 <div><a href="thankyou.html" class="href_smily">😃</a></div>
-                 <div><a href="thankyou.html" class="href_smily">😍</a></div>
+            <form id="emoji_app">         
+                 <div class="emoji">
+               
+                <div><a href="feedback.html"  id="smily_1" name="unsatisfied"  class="href_smily">😠</a></div>
+                <div><a href="feedback.html" id="smily_2" name="Unhappy" onclick=" return feedback(this.id);return false"  class="href_smily">😑</a></div>
+                 <div><a href="feedback.html" id="smily_3" name="moderate"   class="href_smily">🙂 </a></div>
+                 <div><a href="thankyou.html" id="smily_4" name="satisfied"  class="href_smily">😃</a></div>
+                 <div><a href="thankyou.html" id="smily_5"  name="happy"  class="href_smily">😍</a></div>
                
             </div>
+        </form>  
         </div>
     </div>
 </body>
