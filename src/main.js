@@ -1,10 +1,14 @@
 const { protocol } = require('electron');
-const{getConnection} = require("./src/database/database.js");
+const{getConnection} = require("./database.js");
 const{app,BrowserWindow,ipcMain} = require('electron/main');
+
+let mainWindow;
 require('electron-reload')(__dirname)
 app.allowRendererProcessReuse = true
+
 const createFeedback = async(feedback)=>{
     try {
+        alert("sd");
         const conn = await getConnection();
         feedback.feedbackname = feedback.feedbackname
         feedback.feedbackreason = feedback.feedbackreason
@@ -24,22 +28,25 @@ const createFeedback = async(feedback)=>{
 
 
 function createWindow(){
-    const win = new BrowserWindow({
-        width:800,
-        height:600, 
+    window = new BrowserWindow({
+        width: 800,
+        height: 600,
         webPreferences: {
-            nodeIntegration:true
-            //preload: path.join(__dirname, 'preload.js')
-          }
-    }); 
+          nodeIntegration: true,
+          contextIsolation:false
+         
+           // This allows you to use Node.js APIs in your renderer process
+        }
+    });
 
  
-   win.loadFile('src/ui/index.html');
+    window.loadFile("src/ui/index.html");
 }
 
-let server = require('./server/server.js')
-let db = require('./src/database/database.js')
+//let server = require('./server.js')
+let db = require('./database.js');
 app.whenReady().then(()=>{
+    
     ipcMain.handle('ping', () => 'pong')
     createWindow()
 });
@@ -54,5 +61,5 @@ app.on('window-all-closed',()=>{
 
 module.exports = {
    createWindow,
-    createFeedback
+ createFeedback
 }
