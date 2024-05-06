@@ -2,7 +2,7 @@
   "name": "customerfeedbackproject-electron",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.js",
+  "main": "src/main1.js",
   "scripts": {
     "start": "electron ."
   },
@@ -20,6 +20,7 @@
     "mongodb": "^6.5.0",
     "mongoose": "^8.3.3",
     "mssql": "^10.0.2",
+    "mysql": "^2.18.1",
     "mysql2": "^3.9.7",
     "nodemon": "^3.1.0",
     "promise-mysql": "^5.2.0",

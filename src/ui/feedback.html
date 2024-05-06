@@ -3,58 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Customer Feedback Application</title>
     <link rel="stylesheet" href="main.css">
     <script src="feedback.js"></script>
-    
 </head>
 <body>
     <div class="container">
-      <div class="back" >
-        <a href="index.html" class="href">Back</a>
-      </div>
-       <form id="feedbackform">
-    <div class="wrapper">
-             <p class="text">  What is the reason you are not happy? </p>
-            <div class="reasons">
-              <!-- <div class="checkedcontainer"> 
-             <input type="checkbox" class="checkbox"  value="1"  onchange="selectedresons()">Wait Time <br>
-               </div> -->
-          
-             <div class="checkedcontainer"> 
-             <input type="checkbox" class="checkbox"  value="2"onchange="selectedresons()" >Staff Attitude<br>
-             </div>
-
-              <div class="checkedcontainer" >
-              <input type="checkbox" class="checkbox" value="3" onchange="selectedresons()">Food Quality<br>
-              </div>
-     
-              <div class="checkedcontainer">
-               <input type="checkbox" class="checkbox" onchange="selectedresons()"  value="4">Prices<br>
+        <div class="back">
+            <a href="index.html" class="href">Back</a>
+        </div>
+        <form id="feedbackform">
+            <div class="wrapper">
+                <p class="text">What is the reason you are not happy?</p>
+                <div class="reasons">
+                    <!-- <div class="checkedcontainer"> 
+                         <input type="checkbox" class="checkbox"  value="1"  onchange="selectedresons()">Wait Time <br>
+                       </div> -->
+                    <div class="checkedcontainer"> 
+                        <input type="checkbox" class="checkbox"  value="Staff Attitude" onchange="selectedreasons()">Staff Attitude<br>
+                    </div>
+                    <div class="checkedcontainer">
+                        <input type="checkbox" class="checkbox" value="Food Quality" onchange="selectedreasons()">Food Quality<br>
+                    </div>
+                    <div class="checkedcontainer">
+                        <input type="checkbox" class="checkbox" onchange="selectedreasons()"  value="Prices">Prices<br>
+                    </div>
+                    <div class="checkedcontainer"> 
+                        <input type="checkbox" class="checkbox"  value="Cleanliness"  onchange="selectedreasons()">Cleanliness <br>
+                    </div>
+                    <div class="checkedcontainer"> 
+                        <input type="checkbox" class="checkbox"  value="Other" onchange="selectedreasons()">Other<br>
+                    </div>
                 </div>
-
-                 <div class="checkedcontainer"> 
-                 <input type="checkbox" class="checkbox"  value="5"  onchange="selectedresons()">Cleanliness <br>
-                  </div>
-
-                 <div class="checkedcontainer"> 
-                 <input type="checkbox" class="checkbox"  value="6" onchange="selectedresons()">Other<br>
-                 </div>
-                
-      
-             </div>
-            
-             <div class="submit">
-              <button type="button" class="btnsubmit"  onclick="feedback()">Submit</button>
-             </div>
-      </div>
-    </form>
-      
-    </div>
-   
-   
-  
- 
+                <div class="submit">
+                    <button type="button" class="btnsubmit"  onclick="feedback()">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>
