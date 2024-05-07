@@ -39,7 +39,12 @@ async function feedback() {
     };
     const feedbackCreated = await createFeedback(feedbackData); // Call createFeedback function with feedback data
     if (feedbackCreated) {
-        window.location.href = "thankyou.html"; // Navigate to thankyou.html if feedback was successfully created
+        setTimeout(() => {
+            window.location.href = "index.html"; // Redirect to index.html after 3 seconds
+        }, 10); // 10mili seconds delay
+        window.location.href = "thankyou.html"; // Redirect to thankyou.html immediately
+     
+        
     } else {
         // Handle case where feedback creation failed
         alert("Failed to submit feedback.");
