@@ -41,7 +41,7 @@ async function feedback() {
     if (feedbackCreated) {
         setTimeout(() => {
             window.location.href = "index.html"; // Redirect to index.html after 3 seconds
-        }, 10); // 10mili seconds delay
+        }, 100); // 10mili seconds delay
         window.location.href = "thankyou.html"; // Redirect to thankyou.html immediately
      
         

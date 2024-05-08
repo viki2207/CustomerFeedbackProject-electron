@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
                 if (saveFeedback) {
                     setTimeout(() => {
                         window.location.href = "index.html"; // Redirect to index.html after 3 seconds
-                    }, 10); // 10 mili seconds delay
+                    }, 100); // 10 mili seconds delay
                     window.location.href = "thankyou.html"; // Redirect to thankyou.html immediately
                 } else {
                     alert("Loading failed");
