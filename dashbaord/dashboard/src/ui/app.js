@@ -1,24 +1,54 @@
-const { createReasons, getReasons, deleteReasons } = require('../reasons'); // Adjust the path as needed
+// Import necessary functions from '../reasons' module
+const { createReasons, getReasons, deleteReasons, getReasonsById, updateReasons } = require('../reasons'); // Adjust the path as needed
 
+// Select necessary DOM elements
 const reasonForm = document.querySelector("#ReasonsForm");
 const reasonName = document.querySelector("#name");
 const reasonList = document.querySelector("#Reasons");
-let date = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
+// Set initial variables
+let date = new Date().toISOString().slice(0, 19).replace('T', ' ');
 let reasons = [];
+let editingStatus = false;
+let editReasonId;
+
+// Set focus on the reasonName input field
 reasonName.focus();
+
+// Function to populate form fields for editing
+const editReason = async (id) => {
+    const reason = await getReasonsById(id);
+    if (reason != undefined && reason != null) {
+        reasonName.value = reason[0].reasonname;
+        editingStatus = true;
+        editReasonId = id;
+        reasonName.focus();
+    }
+}
+
+// Event listener for form submission
 reasonForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
+    // Create a reason object from form data
     const reason = {
         reasonname: reasonName.value,
-        created_at:date
+        created_at: date
     };
 
     try {
-        const savedReason = await createReasons(reason);
-        console.log(savedReason);
-        
+        if (editingStatus) {
+            // If editing an existing reason, update it
+            const updateReason = await updateReasons(editReasonId, reason);
+            console.log(updateReason);
+        } else {
+            // If creating a new reason, save it
+            const savedReason = await createReasons(reason);
+            console.log(savedReason);
+            editingStatus = false;
+            editReasonId = "";
+        }
+
         // Reset the form
         reasonForm.reset();
         reasonName.focus();
@@ -28,20 +58,21 @@ reasonForm.addEventListener('submit', async (e) => {
         console.error(error);
     }
 });
-const deleteReason = async(id) =>{
-    const response  = confirm("Are you sure want to delete this reason");
-    if(response)
-        {
-            await deleteReasons(id)
-            await getAndRenderReasons()
-        }
+
+// Function to handle reason deletion
+const deleteReason = async (id) => {
+    const response = confirm("Are you sure you want to delete this reason?");
+    if (response) {
+        await deleteReasons(id);
+        await getAndRenderReasons();
+    }
 }
 
-
+// Function to render reasons in a table
 function renderReasons(reasons) {
     reasonList.innerHTML = ""; // Clear the current list
 
-    if (Array.isArray(reasons)) { // Check if reasons is an array
+    if (Array.isArray(reasons)) {
         // Create a container for the table
         const tableContainer = document.createElement('div');
         tableContainer.classList.add('table-container');
@@ -52,10 +83,10 @@ function renderReasons(reasons) {
 
         // Create table header
         const tableHeader = document.createElement('tr');
-        const headers = ['ID', 'Reason Name',  'Actions'];
+        const headers = ['ID', 'Reason Name', 'Actions'];
         headers.forEach(headerText => {
             const th = document.createElement('th');
-            th.scope  = "col";
+            th.scope = "col";
             th.textContent = headerText;
             tableHeader.appendChild(th);
         });
@@ -72,8 +103,6 @@ function renderReasons(reasons) {
             const tdName = document.createElement('td');
             tdName.textContent = reason.reasonname;
             tr.appendChild(tdName);
-
-           
 
             const tdActions = document.createElement('td');
             const editButton = document.createElement('button');
@@ -99,20 +128,19 @@ function renderReasons(reasons) {
         // Append the table container to the reasonList
         reasonList.appendChild(tableContainer);
     } else if (reasons != undefined) {
-        // Handle the case when a single reason object is received
         console.error("Reasons data is not an array:", reasons);
     } else {
         console.error("Reasons data is undefined.");
     }
 }
 
-
+// Function to fetch and render reasons
 async function getAndRenderReasons() {
     try {
-        const reasonsData = await getReasons(); // Fetch reasons from the database
-        reasons = reasonsData; // Assuming reasons are directly returned
-     console.log("yor" + reasons)
-        renderReasons(reasons); // Render the reasons
+        const reasonsData = await getReasons();
+        reasons = reasonsData;
+        console.log("Your reasons:", reasons);
+        renderReasons(reasons);
     } catch (error) {
         console.error(error);
     }
