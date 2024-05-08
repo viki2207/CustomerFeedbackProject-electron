@@ -29,6 +29,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-squirrel-startup": "^1.0.0",
     "mysql2": "^3.9.7",

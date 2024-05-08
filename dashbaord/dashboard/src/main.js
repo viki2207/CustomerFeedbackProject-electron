@@ -21,8 +21,8 @@ const createWindow = () => {
     },
   });
 
-  // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, './ui/index.html'));
+  // and load the index.html of the app. // temp changes
+  mainWindow.loadFile(path.join(__dirname, './ui/login.html'));
 
   // Open the DevTools.
  // mainWindow.webContents.openDevTools();

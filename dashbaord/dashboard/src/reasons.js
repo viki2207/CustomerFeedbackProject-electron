@@ -67,6 +67,11 @@ const getReasonsById = async(Id) => {
     const result = await conn.query("SELECT * FROM feedbackreasons WHERE id = ?", Id);
     return result[0];
 }
-
+//Function to verify the username and password 
+const getUsers = async(username,password)=>{
+    const conn = await getConnection();
+    const result = await conn.query("SELECT * FROM users WHERE username = ? AND password = ?", [username,password]);
+    return result[0];
+}
 // Export the functions for external use
-module.exports = { createReasons, getReasons, deleteReasons, updateReasons, getReasonsById };
+module.exports = { createReasons, getReasons, deleteReasons, updateReasons, getReasonsById, getUsers };
