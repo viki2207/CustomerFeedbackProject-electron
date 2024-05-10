@@ -18,8 +18,7 @@ async function login() {
             // Assuming checkLoginDetails indicates login success (true) or failure (false)
             if (checkLoginDetails) {
                 alert("Login Successful");
-                loginForm.reset();
-                window.location.href = "index.html";
+                window.location.href = "dashboard.html";
             } else {
                 alert("Login Failed. Please check your credentials.");
             }
