@@ -56,6 +56,7 @@ reasonForm.addEventListener('submit', async (e) => {
 
     } catch (error) {
         console.error(error);
+        reasonName.focus();
     }
 });
 
@@ -65,6 +66,8 @@ const deleteReason = async (id) => {
     if (response) {
         await deleteReasons(id);
         await getAndRenderReasons();
+        reasonName.focus();
+
     }
 }
 
@@ -127,10 +130,13 @@ function renderReasons(reasons) {
 
         // Append the table container to the reasonList
         reasonList.appendChild(tableContainer);
+        reasonName.focus();
     } else if (reasons != undefined) {
         console.error("Reasons data is not an array:", reasons);
+        reasonName.focus();
     } else {
         console.error("Reasons data is undefined.");
+        reasonName.focus();
     }
 }
 
@@ -149,4 +155,6 @@ async function getAndRenderReasons() {
 // Initial fetch and render when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     getAndRenderReasons();
+    reasonName.focus();
+
 });

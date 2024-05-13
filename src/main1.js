@@ -19,6 +19,16 @@ function createWindow() {
 
     window.loadFile("src/ui/index.html");
 }
+// Function to close the database connection
+const closeConnection = async() => {
+    try {
+        // Close the database connection
+        await getConnection().end();
+        console.log("Database connection closed successfully.");
+    } catch (error) {
+        console.error("Error closing database connection:", error);
+    }
+};
 
 let db = require('./database.js');
 
@@ -31,6 +41,7 @@ app.on('activate', () => {
 });
 
 app.on('window-all-closed', () => {
+    closeConnection();
     if (process.platform !== 'darwin') app.quit();
 });
 

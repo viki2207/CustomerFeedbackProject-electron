@@ -15,28 +15,11 @@
         <form id="feedbackform">
             <div class="wrapper">
                 <p class="text">What is the reason you are not happy?</p>
-                <div class="reasons">
-                    <!-- <div class="checkedcontainer"> 
-                         <input type="checkbox" class="checkbox"  value="1"  onchange="selectedresons()">Wait Time <br>
-                       </div> -->
-                    <div class="checkedcontainer"> 
-                        <input type="checkbox" class="checkbox"  value="Staff Attitude" onchange="selectedreasons()">Staff Attitude<br>
-                    </div>
-                    <div class="checkedcontainer">
-                        <input type="checkbox" class="checkbox" value="Food Quality" onchange="selectedreasons()">Food Quality<br>
-                    </div>
-                    <div class="checkedcontainer">
-                        <input type="checkbox" class="checkbox" onchange="selectedreasons()"  value="Prices">Prices<br>
-                    </div>
-                    <div class="checkedcontainer"> 
-                        <input type="checkbox" class="checkbox"  value="Cleanliness"  onchange="selectedreasons()">Cleanliness <br>
-                    </div>
-                    <div class="checkedcontainer"> 
-                        <input type="checkbox" class="checkbox"  value="Other" onchange="selectedreasons()">Other<br>
-                    </div>
+                <div id="checkboxContainer" class="reasons">
+                    <div id="feedbackContainer"></div>
                 </div>
                 <div class="submit">
-                    <button type="button" class="btnsubmit"  onclick="feedback()">Submit</button>
+                    <button type="button" class="btnsubmit" onclick="feedback()">Submit</button>
                 </div>
             </div>
         </form>

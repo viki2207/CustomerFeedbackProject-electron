@@ -1,6 +1,5 @@
 const { getConnection } = require("./database");
 const { BrowserWindow, Notification } = require('electron');
-
 const createFeedback = async (feedback) => {
     try {
         // Introduce a delay of 3 seconds before executing the database query
@@ -16,6 +15,7 @@ const createFeedback = async (feedback) => {
         return false;
     }
 }
+
 
 // Function to introduce delay using Promise
 const delay = (ms) => {
