@@ -1,10 +1,24 @@
 
 const logoutButton = document.getElementById("logout");
 const feedbackButton = document.getElementById("feedback");
-
+const FeedbackSection  = document.getElementById("feedbacksection");
+const DashbaordSection = document.getElementById("Home");
+const DasboardButton = document.getElementById("dashboard");
+FeedbackSection.style.display = "none";
 feedbackButton.addEventListener('click', async(e) => {
     e.preventDefault();
-   window.location.href="index.html";
+    FeedbackSection.style.display = "block";
+
+    DashbaordSection.style.display = "none";
+   
+    
+});
+DasboardButton.addEventListener('click', async(e) => {
+    e.preventDefault();
+    FeedbackSection.style.display = "none";
+    DashbaordSection.style.display = "block"
+ 
+   
     
 });
 logoutButton.addEventListener('click', async(e) => {

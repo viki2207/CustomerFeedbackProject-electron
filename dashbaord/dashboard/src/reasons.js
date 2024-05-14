@@ -71,7 +71,28 @@ const getReasonsById = async(Id) => {
 const getUsers = async(username,password)=>{
     const conn = await getConnection();
     const result = await conn.query("SELECT * FROM users WHERE username = ? AND password = ?", [username,password]);
+    console.log(result[0]);
     return result[0];
 }
+// Function to create a new reason in the database
+const createUsers = async (signup) => {
+    try {
+        // Establish a database connection
+        const conn = await getConnection();
+       
+        // Insert the new reason into the 'feedbackreasons' table
+        const result = await conn.query("INSERT INTO `users` SET ?",signup);
+        
+        // If the insertion is successful, show an alert and return true
+        if (result) {
+           
+            return true;
+        }
+    } catch (error) {
+        // An error occurred during the operation, show an alert and return false
+        alert("Error: " + error.message);
+        return false;
+    }
+}
 // Export the functions for external use
-module.exports = { createReasons, getReasons, deleteReasons, updateReasons, getReasonsById, getUsers };
+module.exports = { createReasons, getReasons, deleteReasons, updateReasons, getReasonsById, getUsers,createUsers };

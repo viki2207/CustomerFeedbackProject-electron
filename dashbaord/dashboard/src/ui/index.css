@@ -5,3 +5,8 @@ body {
   max-width: 38rem;
   padding: 2rem;
 }
+.table
+{
+  margin-top: 2vh;
+  align-items: center;
+}

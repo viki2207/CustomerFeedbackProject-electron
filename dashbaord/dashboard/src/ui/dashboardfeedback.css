@@ -85,6 +85,20 @@ body {
     cursor: pointer;
 }
 
+body {
+    margin: 9px;
+    padding: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    min-height: 100vh; /* Ensure full height of the viewport */
+}
+
+.content {
+    margin-top: 20px; /* Adjust top margin as needed */
+}
+
+
 /* Media query for responsiveness */
 @media screen and (max-width: 768px) {
     .sidebar {

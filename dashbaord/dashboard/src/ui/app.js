@@ -110,12 +110,12 @@ function renderReasons(reasons) {
             const tdActions = document.createElement('td');
             const editButton = document.createElement('button');
             editButton.textContent = 'Edit';
-            editButton.classList.add('btn', 'btn-success', 'btn-sm');
+            editButton.classList.add('btn', 'edit-icon', 'btn-sm');
             editButton.onclick = () => editReason(reason.id);
 
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Delete';
-            deleteButton.classList.add('btn', 'btn-danger', 'btn-sm');
+            deleteButton.classList.add('btn', 'delete-icon', 'btn-sm');
             deleteButton.onclick = () => deleteReason(reason.id);
 
             tdActions.appendChild(editButton);

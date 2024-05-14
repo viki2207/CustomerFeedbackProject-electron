@@ -22,7 +22,7 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app. // temp changes
-  mainWindow.loadFile(path.join(__dirname, './ui/login.html'));
+  mainWindow.loadFile(path.join(__dirname, './ui/dashboardfeedback.html'));
 
   // Open the DevTools.
  // mainWindow.webContents.openDevTools();
