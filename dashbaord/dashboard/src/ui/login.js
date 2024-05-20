@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const { getUsers } = require('../reasons');
 const loginForm = document.querySelector("#login-form")
 
@@ -21,8 +22,14 @@ loginForm.addEventListener('submit' , async (e) => {
             const checkLoginDetails = await getUsers(userName, hashedPassword);
 
             if (checkLoginDetails) {
+                // Create a JWT token
+                const token = jwt.sign({ userName: userName }, 'your_secret_key', { expiresIn: '1h' });
+
+                // Store the token in localStorage or session storage
+                localStorage.setItem('token', token);
+
                 alert("Login Successful");
-                window.location.href = "dashboard.html";
+                window.location.href = "dashboardfeedback.html";
             } else {
                 alert("Login Failed. Please check your credentials.");
                 ResetFields();

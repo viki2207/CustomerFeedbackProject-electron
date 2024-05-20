@@ -44,13 +44,13 @@ button[type="submit"] {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #232931;
     color: #fff;
     cursor: pointer;
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #232931;
 }
 
 @media (max-width: 400px) {
