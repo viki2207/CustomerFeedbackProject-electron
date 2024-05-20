@@ -66,30 +66,44 @@ async function feedback() {
 // Function to populate checkboxes dynamically
 const populateCheckboxes = async () => {
     const reasons = await getReasons();
-    console.log(reasons);
     const checkboxContainer = document.getElementById("checkboxContainer");
+
     if (reasons.length > 0) {
         reasons.forEach(reason => {
+            // Create container for checkbox and label
+            const checkboxWrapper = document.createElement("div");
+            checkboxWrapper.classList.add("checkbox-wrapper");
+
+            // Create checkbox
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
-            checkbox.className = "checkbox";
-            checkbox.value = reason.reasonname; // Set checkbox value
+            checkbox.className = "checkbox checkbox-label";
+            checkbox.value = reason.reasonname;
             checkbox.addEventListener("change", function() {
                 selectedreasons();
             });
-            checkboxContainer.appendChild(checkbox);
 
+            // Create label
             const label = document.createElement("label");
             label.textContent = reason.reasonname;
-            checkboxContainer.appendChild(label);
+            label.classList.add("checkbox-label");
 
-            // Add newline
-            checkboxContainer.appendChild(document.createElement("br"));
+            // Append checkbox and label to wrapper
+            checkboxWrapper.appendChild(checkbox);
+            checkboxWrapper.appendChild(label);
+
+            // Append wrapper to container
+            checkboxContainer.appendChild(checkboxWrapper);
         });
     } else {
         console.error("No reasons fetched from the database.");
     }
 };
+
+
+
+
+
 // Function to fetch and display data from the database
 const displayFeedback = async () => {
     try {
@@ -102,6 +116,7 @@ const displayFeedback = async () => {
             reasons.forEach(reason => {
                 const reasonDiv = document.createElement("div");
                 reasonDiv.textContent = reasons.reasonname;
+              //  reasonDiv.className = "checkbox-wrapper";
                 feedbackContainer.appendChild(reasonDiv);
             });
         } else {

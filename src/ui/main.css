@@ -91,24 +91,25 @@ body{
     font-size: 0.8em;
 
 }
-.btnsubmit
-{
+
+.btnsubmit {
     cursor: pointer;
-    color:#eee;
-    background-color:rgb(151, 196, 214) ;
-    border-radius: 0.8em;
-    border:2em solid rgb(151,196,214);
-    
-    /* font-size: 0.5em; */
-    /* margin-top: 9.3em; */
-    margin-bottom: 0.3em;
-    bottom: 0;
+    color: #fff;
+    background-color: rgb(151, 196, 214);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
+
+
+
 .submit
 {
-    width:23px;
-margin-left: 21.5em;
-margin-top: 13em;
+    display: flex;
+    justify-content: center; /* Align items horizontally in center */
+    margin-top: -10px;
 }
 .back
 {
@@ -120,9 +121,62 @@ border:1em solid rgb(151,196,214);
 text-decoration: none;
 
 }
+
 .href{
 
     color:#eee;
     text-decoration: none;
     border: none;
+}
+
+
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox-wrapper {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Align items vertically */
+
+}
+.checkbox-label {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    background-color: rgb(151, 196, 214);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px; /* Adjust spacing between checkbox and label */
+}
+
+.checkbox:checked + .checkbox-label:before {
+    content: "\2713"; /* Unicode for checkmark */
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff; /* Border color for checked checkbox */
+    border-radius: 3px; /* Rounded corners */
+    text-align: center;
+    line-height: 18px;
+    background-color: #007bff; /* Fill color when checkbox is checked */
+    color: #fff; /* Color of the checkmark */
+    margin-right: 5px; /* Adjust spacing between checkmark and label */
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  
+    margin-right: 5px; /* Additional margin between checkbox and label */
+    width: 20px; /* Adjust checkbox width */
+    height: 20px; /* Adjust checkbox height */
+}
+.checkbox:checked {
+    display: none;
+    margin-right: 0px; /* Additional margin between checkbox and label */
+    width: 0px; /* Adjust checkbox width */
+    height: 20px; 
 }
